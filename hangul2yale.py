@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys, argparse
+import sys
+import argparse
 import pickle
 
-table = pickle.load(open('table.pickle'))
+table = pickle.load(open('table.pickle', 'rb'))
 
 def block (codepoint):
 	'''Return the name of Hangul-related Unicode block.'''
@@ -86,4 +87,4 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 
 	args.string = args.string.decode('utf-8')
-	print convert_string(**vars(args))
+	print(convert_string(**vars(args)))
