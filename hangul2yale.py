@@ -66,7 +66,7 @@ def tweeks (charlist, **args):
 def convert_string (**args):
 	'''convert a Unicode-based string into Yale Romanization.'''
 
-	charlist = [convert(char) for char in args['string']]
+	charlist = [convert(char) for char in args.get('string', '')]
 
 	tweeked_charlist = tweeks(charlist, **args)
 
